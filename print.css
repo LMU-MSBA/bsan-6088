@@ -1,0 +1,229 @@
+/* Print Styles */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    body {
+        background: white !important;
+        font-family: 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .hero {
+        background: white !important;
+        color: black !important;
+        padding: 20pt 0;
+        page-break-inside: avoid;
+        border-bottom: 2pt solid black;
+    }
+    
+    .hero::before {
+        display: none;
+    }
+    
+    .course-header h1 {
+        font-size: 24pt;
+        font-weight: bold;
+        margin-bottom: 8pt;
+        text-shadow: none;
+        color: black !important;
+    }
+    
+    .course-header h2 {
+        font-size: 18pt;
+        margin-bottom: 12pt;
+        color: black !important;
+    }
+    
+    .course-meta {
+        display: block;
+        text-align: center;
+    }
+    
+    .course-meta span {
+        background: none !important;
+        display: inline;
+        margin: 0 10pt;
+        color: black !important;
+    }
+    
+    .guiding-questions {
+        display: none; /* Hide decorative content for print */
+    }
+    
+    .section {
+        margin-bottom: 20pt;
+        page-break-inside: avoid;
+    }
+    
+    .card {
+        background: white !important;
+        border: 1pt solid black;
+        border-radius: 0;
+        padding: 15pt;
+        box-shadow: none !important;
+        margin-bottom: 15pt;
+    }
+    
+    .card h2 {
+        color: black !important;
+        font-size: 16pt;
+        font-weight: bold;
+        margin-bottom: 12pt;
+        border-bottom: 1pt solid black;
+        padding-bottom: 6pt;
+    }
+    
+    .card h3 {
+        color: black !important;
+        font-size: 14pt;
+        font-weight: bold;
+        margin: 12pt 0 6pt 0;
+    }
+    
+    .instructor-grid,
+    .meeting-info,
+    .materials-grid,
+    .resources-grid {
+        display: block;
+    }
+    
+    .instructor-grid > div,
+    .meeting-info > div,
+    .materials-grid > div,
+    .resources-grid > div {
+        margin-bottom: 12pt;
+    }
+    
+    .questions-grid,
+    .schedule-grid,
+    .tips-grid {
+        display: block;
+    }
+    
+    .question,
+    .week,
+    .tip {
+        background: white !important;
+        border: 1pt solid black;
+        padding: 8pt;
+        margin-bottom: 8pt;
+        border-radius: 0;
+    }
+    
+    .objectives-list li {
+        background: white !important;
+        border: none;
+        border-left: 2pt solid black;
+        padding: 8pt;
+        margin: 8pt 0;
+    }
+    
+    .objectives-list li::before {
+        background: black !important;
+        color: white !important;
+        position: static;
+        display: inline-block;
+        margin-right: 8pt;
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        padding: 2pt 4pt;
+    }
+    
+    .grade-item {
+        background: white !important;
+        border: 1pt solid black;
+        padding: 6pt 8pt;
+        margin: 4pt 0;
+        display: block;
+    }
+    
+    .grade-item::after {
+        content: " - " attr(data-weight);
+        font-weight: bold;
+    }
+    
+    .scale-grid {
+        display: block;
+    }
+    
+    .grade {
+        background: white !important;
+        border: 1pt solid black;
+        padding: 4pt 6pt;
+        margin: 2pt 0;
+        display: inline-block;
+        margin-right: 8pt;
+    }
+    
+    .policy-section {
+        background: white !important;
+        border: 1pt solid black;
+        border-left: 3pt solid black;
+        padding: 8pt;
+        margin: 8pt 0;
+    }
+    
+    .policy-section h3 {
+        color: black !important;
+    }
+    
+    footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2pt solid black;
+        padding: 12pt 0;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+    
+    /* Hide interactive elements */
+    .card:hover,
+    .question:hover,
+    .week:hover,
+    .tip:hover,
+    .grade:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    /* Ensure proper page breaks */
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    /* Links */
+    a {
+        color: black !important;
+        text-decoration: underline;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        font-style: italic;
+    }
+    
+    /* Remove animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
