@@ -149,37 +149,61 @@ main {
 }
 
 /* Instructor Section */
-.instructor-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+.instructor-container {
+    max-width: 100%;
 }
 
-.contact-info p, .office-hours ul {
-    margin-bottom: 8px;
+.instructor-container h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
-.contact-info a {
+.instructor-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.instructor-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.instructor-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.field-label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.field-value {
+    color: #555;
+    line-height: 1.5;
+}
+
+.field-value a {
     color: #0076A5;
     text-decoration: none;
     font-weight: 500;
 }
 
-.contact-info a:hover {
+.field-value a:hover {
     text-decoration: underline;
 }
 
-.office-hours ul {
-    list-style: none;
-}
-
-.office-hours li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.office-hours li:last-child {
-    border-bottom: none;
+.field-note {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 /* Format Overview */
@@ -590,11 +614,20 @@ footer p {
         grid-template-columns: 1fr;
     }
     
-    .instructor-grid,
     .format-overview,
     .materials-info {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+    
+    .instructor-field {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .field-label {
+        min-width: auto;
+        font-size: 0.95rem;
     }
     
     .workshop-grid {

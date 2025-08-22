@@ -56,45 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Print functionality
-    function addPrintButton() {
-        const printButton = document.createElement('button');
-        printButton.innerHTML = '🖨️ Print Syllabus';
-        printButton.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #0076A5;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        `;
-        
-        printButton.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = '#005a82';
-            this.style.transform = 'translateY(-2px)';
-        });
-        
-        printButton.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = '#0076A5';
-            this.style.transform = 'translateY(0)';
-        });
-        
-        printButton.addEventListener('click', function() {
-            window.print();
-        });
-        
-        document.body.appendChild(printButton);
-    }
-    
-    // Add print button
-    addPrintButton();
     
     // Accessibility improvements
     function improveAccessibility() {
